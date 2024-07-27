@@ -1,37 +1,37 @@
 function generateRandomCode() {
-    // Generate a random 6-digit code
+    // RANDOM 6 DIGIT EVENT CODE
     const randomCode = Math.floor(100000 + Math.random() * 900000);
     
-    // Create a new div element for the generated code
+    // DIV ELEMENT
     const codeElement = document.createElement('div');
     codeElement.textContent = randomCode;
     codeElement.className = 'generated-code';
     
-    // Create a new textbox for this code
+    // NEW TEXTBOX
     const textBox = document.createElement('input');
     textBox.type = 'text';
     textBox.value = randomCode;
     textBox.className = 'generated-textbox';
-    textBox.readOnly = true; // Make it read-only
+    textBox.readOnly = false; // Make it read-only
 
-    // Create a new Save button
+    
     const saveButton = document.createElement('button');
-    saveButton.textContent = 'Save';
+    saveButton.textContent = 'Save Event Code';
     saveButton.className = 'save-button';
     saveButton.addEventListener('click', function() {
         sendCodeToSheet(randomCode);
     });
     
-    // Create a container div for code, textbox, and save button
+
     const codeContainer = document.createElement('div');
     codeContainer.className = 'code-container-item';
     
-    // Append code, textbox, and save button to the container
+
     codeContainer.appendChild(codeElement);
     codeContainer.appendChild(textBox);
     codeContainer.appendChild(saveButton);
     
-    // Append the new container to the active codes container
+    // APPEND NEW CONTAINER
     document.getElementById('activeCodesContainer').appendChild(codeContainer);
 }
 
