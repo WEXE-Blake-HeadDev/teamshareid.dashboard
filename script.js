@@ -35,26 +35,4 @@ function generateRandomCode() {
     document.getElementById('activeCodesContainer').appendChild(codeContainer);
 }
 
-function sendCodeToSheet(code) {
-    const url = 'YOUR_ZAPIER_WEBHOOK_URL'; // Replace with your Zapier Webhook URL
-
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ code: code }),
-    })
-    .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.error('Error:', error));
-}
-
-function clearCodes() {
-    // Clear the active codes container
-    document.getElementById('activeCodesContainer').innerHTML = '';
-}
-
-// Add event listeners to the buttons
-document.getElementById('generateButton').addEventListener('click', generateRandomCode);
-document.getElementById('clearButton').addEventListener('click', clearCodes);
+\
